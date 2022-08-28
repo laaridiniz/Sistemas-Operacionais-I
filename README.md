@@ -1,2 +1,8 @@
-# Sistemas-Operacionais-I
-Repositório criado para centralizar os conteúdos e atividades da disciplina Sistemas Operacionais I do curso de Análise e Desenvolvimento de Sistemas.
+<h1 align="center">🔸Sistemas Operacionais I🔸</h1>
+Repositório criado para centralizar os conteúdos e atividades da disciplina Sistemas Operacionais I do curso de Análise e Desenvolvimento de Sistemas.<br>
+<br>
+
+Índice de temas:
+
+* [Cache](https://github.com/laaridiniz/Sistemas-Operacionais-I/tree/main/Cache)
+* [Buffer](https://github.com/laaridiniz/Sistemas-Operacionais-I/tree/main/Buffer)
