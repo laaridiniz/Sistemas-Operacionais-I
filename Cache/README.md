@@ -9,7 +9,7 @@ Quando o assunto é capacidade de armazenamento, custo e velocidade dos diferent
 </p>
 
 <div align="center">
-  <img src="images/hierarquia_memoria.jpg" alt="pirâmide demonstrando os níveis de memória" width="100%" height="100%">
+  <img src="images/hierarquia_memoria.jpg" alt="pirâmide demonstrando os níveis de memória" width="800" height="500">
 </div>
   
 <p align="center">Fonte: IME - USP.</p>
