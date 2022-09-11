@@ -61,5 +61,7 @@ Os computadores mais modernos têm organização de cache em três níveis, conf
 
 <p>
 https://www.youtube.com/watch?v=1WGq74ptXGw<br>
-https://www.youtube.com/watch?v=ZpGqJ-YsXf4
+https://www.youtube.com/watch?v=ZpGqJ-YsXf4<br>
+http://coral.ufsm.br/tiago/introcomp/Aula%203%20-%20Memoria.pdf<br>
+Tanenbaum, Andrew S. Sistemas Operacionais Modernos. Tradução de Ronaldo A. L. Gonçalves, Luís A. Consularo, Luciana do Amaral Teixeira. 3. ed. São Paulo: Pearson Prentice Hall, 2009. 653 p. ISBN 978-85-7605-237-1.
 </p>
