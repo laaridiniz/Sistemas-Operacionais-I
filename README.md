@@ -5,4 +5,4 @@ Repositório criado para centralizar os conteúdos e atividades da disciplina Si
 Índice de temas:
 
 * [Cache](https://github.com/laaridiniz/Sistemas-Operacionais-I/tree/main/Cache)
-* [Buffer](https://github.com/laaridiniz/Sistemas-Operacionais-I/tree/main/Buffer)
+* [Buffering](https://github.com/laaridiniz/Sistemas-Operacionais-I/tree/main/Buffering)
