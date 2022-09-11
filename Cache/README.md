@@ -38,7 +38,7 @@ for (i=0; i<100; i++)
 Os computadores mais modernos têm organização de cache em três níveis, conforme ilustrado a seguir:<br></p>
 
 <div align="center">
-  <img src="..." alt="organização da memória cache" width="800" height="500">
+  <img src="images/niveis_cache.jpg" alt="organização da memória cache" width="600" height="400">
 </div>
   
 <p align="center">Fonte: UFSM.</p>
@@ -51,7 +51,7 @@ Os computadores mais modernos têm organização de cache em três níveis, conf
 Os computadores mais modernos têm organização de cache em três níveis, conforme ilustrado a seguir:<br></p>
 
 <div align="center">
-  <img src="..." alt="esquema que mostra o funcionamento da memória cache" width="800" height="500">
+  <img src="images/funcionamento_cache.jpg" alt="esquema que mostra o funcionamento da memória cache" width="800" height="500">
 </div>
   
 <p align="center">Fonte: UFSM.</p>
