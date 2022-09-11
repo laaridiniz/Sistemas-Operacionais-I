@@ -35,6 +35,8 @@ for (i=0; i<100; i++)
 
 <p align="justify">b) <b>Localidade temporal</b>: a partir deste princípio, se eu busquei uma palavra agora, as chances de eu querer buscá-la novamente em um curto período de tempo são altas. Daí a necessidade de armazenar o dado em uma memória mais rápida (cache).<br>
 <br>
+Na prática, o princípio da localidade temporal é materializado toda vez que uma mesma posição de memória é acessada diversas vezes em um curto período de tempo, como acontece por exemplo toda vez que um programa aciona uma variável dentro de um loop ou quando um programa se utiliza de ponteiros para acessar uma informação em determinado lugar da memória.<br>
+<br>
 Os computadores mais modernos têm organização de cache em três níveis, conforme ilustrado a seguir:<br></p>
 
 <div align="center">
