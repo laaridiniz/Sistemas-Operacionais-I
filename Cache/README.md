@@ -14,15 +14,52 @@ Quando o assunto é capacidade de armazenamento, custo e velocidade dos diferent
   
 <p align="center">Fonte: IME - USP.</p>
 <br>
-  
+ 
   ## Função
   
 <p align="justify">O computador funciona seguindo um ciclo de Busca > Decodificação > Execução. No entanto, o maior problema desse ciclo é que a velocidade do processador é muito maior que a da memória RAM. Para evitar que o processador fique muito tempo ocioso aguardando resposta da memória RAM, foi desenvolvida a memória cache, que é mais rápida que a RAM. Assim é mais vantajoso que o processador busque os dados na cache do que na RAM. Porém, devido à limitação de capacidade, a memória cache só vai armazenar os dados mais importantes (usados com mais frequência) para o processador.<br>
 <br>
 Em resumo, a função da memória cache é melhorar o desempenho do computador.</p>
 
+## Princípios da memória cache
+
+<p align="justify">A memória cache funciona de acordo com os seguintes princípios:<br>
+<br>
+a) <b>Localidade espacial</b>: segundo este princípio, se eu busquei uma determinada instrução, as chances de eu querer buscar a instrução seguinte são altas. Por esse motivo, a memória cache sempre buscará um bloco da memória principal.<br>
+<br>
+Isto é assim porque, espacialmente, na memória, as instruções provavelmente estarão em posições contíguas. Ou seja, os dados são organizados sequencialmente (vetores, listas, tabelas, matrizes) e, consequentemente, os programas são escritos de forma sequencial, de maneira que as próximas instruções estão geralmente próximas da instrução atual. Além disso, os programas apresentam variáveis de controle em pequeno número que são acessadas frequentemente, como ocorre por exemplo no índice de um laço (trecho de código curto que é executado várias vezes):<br></p>
+
+```
+for (i=0; i<100; i++)
+```
+
+<p align="justify">b) <b>Localidade temporal</b>: a partir deste princípio, se eu busquei uma palavra agora, as chances de eu querer buscá-la novamente em um curto período de tempo são altas. Daí a necessidade de armazenar o dado em uma memória mais rápida (cache).<br>
+<br>
+Os computadores mais modernos têm organização de cache em três níveis, conforme ilustrado a seguir:<br></p>
+
+<div align="center">
+  <img src="..." alt="organização da memória cache" width="800" height="500">
+</div>
+  
+<p align="center">Fonte: UFSM.</p>
+<br>
+
+## Processo de leitura
+
+<p align="justify">Toda vez que o processador busca uma informação na memória cache e a encontra, ocorre o chamado <b>cache hit</b>, ao passo que, se ele buscar uma informação na memória cache e não a encontrar, ocorrerá o chamado <b>cache miss</b>.<br>
+<br>
+Os computadores mais modernos têm organização de cache em três níveis, conforme ilustrado a seguir:<br></p>
+
+<div align="center">
+  <img src="..." alt="esquema que mostra o funcionamento da memória cache" width="800" height="500">
+</div>
+  
+<p align="center">Fonte: UFSM.</p>
+<br>
+
 ## Referências
 
 <p>
 https://www.youtube.com/watch?v=1WGq74ptXGw<br>
 https://www.youtube.com/watch?v=ZpGqJ-YsXf4
+</p>
