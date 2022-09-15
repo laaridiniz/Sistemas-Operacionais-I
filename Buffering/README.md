@@ -2,7 +2,9 @@
 
 ## Conceito
 
-<p align="justify"><i>Buffering</i> é uma técnica que consiste na utilização de uma área na memória principal, denominada buffer, para a transferência de dados entre os dispositivos de entrada e de saída e a memória. De acordo com Francis Berenger Machado e Luiz Paulo Maia, "esta técnica permite que em uma operação de leitura o dado seja transferido primeiramente para o buffer, liberando imediatamente o dispositivo de entrada para realizar uma nova leitura."<br>
+<p align="justify">Enquanto a memória cache é parte da estrutura do processador, o <i>buffer</i> ou <i>buffering</i> é uma técnica de processamento de dados. Quando se fala em <i>buffer</i>, deve-se ter em mente a ideia de uma memória temporária reservada para guardar uma quantidade de dados enquanto eles estão sendo processados ou transferidos.<br>
+  <br>
+Em outras palavras, <i>Buffering</i> é uma técnica que consiste na utilização de uma área na memória principal, denominada buffer, para a transferência de dados entre os dispositivos de entrada e de saída e a memória. De acordo com Francis Berenger Machado e Luiz Paulo Maia, "esta técnica permite que em uma operação de leitura o dado seja transferido primeiramente para o buffer, liberando imediatamente o dispositivo de entrada para realizar uma nova leitura."<br>
 <br>
 Assim sendo, enquanto o processador manipula o dado armazenado no buffer, o dispositivo de entrada/saída realiza outra operação de leitura. A mesma dinâmica também ocorre nas operações de gravação.<br>
 <br>
@@ -20,4 +22,6 @@ O <i>buffering</i> permite, então, que o problema da disparidade da velocidade 
 ## Referências
 
 <p>
+https://www.youtube.com/watch?v=cHb3IkCGUBo <br>
+https://www.youtube.com/watch?v=HpSi_W3x07I <br>
 MACHADO, Francis B; MAIA, Luiz P. Arquitetura de Sistemas Operacionais. 4. ed. Rio de Janeiro: LTC, 2007. 305 p. ISBN 978-85-216-1548-4.
