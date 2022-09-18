@@ -7,3 +7,4 @@ Repositório criado para centralizar os conteúdos e atividades da disciplina Si
 * [Cache](https://github.com/laaridiniz/Sistemas-Operacionais-I/tree/main/Cache)
 * [Buffering](https://github.com/laaridiniz/Sistemas-Operacionais-I/tree/main/Buffering)
 * [Spooling](https://github.com/laaridiniz/Sistemas-Operacionais-I/tree/main/Spooling)
+* [Kernel](https://github.com/laaridiniz/Sistemas-Operacionais-I/tree/main/Kernel)
