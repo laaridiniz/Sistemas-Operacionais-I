@@ -2,7 +2,7 @@
 
 ## Conceito
 
-<p align="justify"><i>Spooling</i> (Simultaneous Peripheral Operation On-line) é uma técnica que surgiu no final dos anos 1950 para aumentar o grau de concerrência e a eficiência dos sistemas operacionais.<br>
+<p align="justify"><i>Spooling</i> (Simultaneous Peripheral Operation On-line) é uma técnica que surgiu no final dos anos 1950 para aumentar o grau de concorrência e a eficiência dos sistemas operacionais.<br>
 <br>
 Obs.: a ideia de concorrência está diretamente ligada à possibilidade de o processador executar várias tarefas ao mesmo tempo, permitindo que vários programas sejam executados concorrentemente pelo sistema operacional.<br>
 <br>
