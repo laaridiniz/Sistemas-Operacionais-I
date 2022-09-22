@@ -24,7 +24,9 @@ O exemplo clássico da aplicação da técnica de spooling consiste no procedime
 <img src="Images/spool.jpg" alt="esquema de funcionamento do arquivo de spool no processo de impressão" width="80%" height="80%"><br>
 </p>
 
-<p align="justify">O uso do spooling permite, portanto, desvincular o programa do dispositivo de impressão, impedindo que um programa reserve a impressora para uso exclusivo. O sistema operacional fica responsável por gerenciar a sequência de impressões solicitadas pelos programas, a partir de critérios que garantam a segurança e o uso eficiente das impressoras.<br></p>
+<p align="justify">O uso do spooling permite, portanto, desvincular o programa do dispositivo de impressão, impedindo que um programa reserve a impressora para uso exclusivo. O sistema operacional fica responsável por gerenciar a sequência de impressões solicitadas pelos programas, a partir de critérios que garantam a segurança e o uso eficiente das impressoras.<br>
+<br>
+O spooling, neste caso, utilizará a memória secundária porque a impressora tem uma velocidade de processamento inferior à do processador, então a memória principal (mais veloz) fica disponível para executar tarefas que exijam maior velocidade. </p>
 
 ## Referências
 
