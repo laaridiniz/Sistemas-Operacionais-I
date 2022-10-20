@@ -2,7 +2,7 @@
 
 ## Conceito
 
-<p align="justify">O sistema operacional é formado por um conjunto de rotinas que oferece serviços aos usuários e às auas aplicações. Esse conjunto de rotinas é denominado <i>núcleo do sistema</i> ou <i>Kernel</i>.<br>
+<p align="justify">O sistema operacional é formado por um conjunto de rotinas que oferece serviços aos usuários e às suas aplicações. Esse conjunto de rotinas é denominado <i>núcleo do sistema</i> ou <i>Kernel</i>.<br>
 <br>
 Obs.: Embora a maioria dos sistemas operacionais seja fornecida junto com utilitários e linguagem de comandos (ferramentas de apoio ao usuário), essas ferramentas não são parte do núcleo do sistema.<br>
 <br>
