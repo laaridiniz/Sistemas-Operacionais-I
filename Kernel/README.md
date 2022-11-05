@@ -38,5 +38,7 @@ Como exemplo das principais funções do núcleo encontradas nos sistemas operac
 ## Referências
 
 <p>
+https://www.alura.com.br/artigos/sistemas-operacionais-conceito-estrutura<br>
 https://www.youtube.com/watch?v=ds1pNi-N8pQ<br>
-MACHADO, Francis B; MAIA, Luiz P. Arquitetura de Sistemas Operacionais. 4. ed. Rio de Janeiro: LTC, 2007. 305 p. ISBN 978-85-216-1548-4.
+MACHADO, Francis B; MAIA, Luiz P. Arquitetura de Sistemas Operacionais. 4. ed. Rio de Janeiro: LTC, 2007. 305 p. ISBN 978-85-216-1548-4.<br>
+
