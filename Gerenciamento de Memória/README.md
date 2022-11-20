@@ -41,14 +41,31 @@ a) Partições fixas (alocação estática): são determinadas no momento do boo
 - Tamanho e número de partições são fixos;<br>
 - Tendem a desperdiçar memória;<br>
 - Mais simples.<br>
+<br></p>
+
+<div align="center">
+  <img src="Imagens/particoes-fixas.jpg" alt="ilustração partições fixas" width="80%" height="80%">
+</div>
+  
+<p align="center">Fonte: ICMC - USP</p>
 <br>
+
+<p align="justify">
 b) Partições variáveis (alocação dinâmica): ocorrem durante o tempo de execução dos programas.<br>
 - Tamanho e número de partições variam;<br>
 - Otimiza a utilização da memória, mas complica a alocação e a liberação;<br>
 - As partições são alocadas dinamicamente.<br>
 - < fragmentação interna<br>
 - > fragmentação externa<br>
+<br>
 </p>
+
+<div align="center">
+  <img src="Imagens/part-variveis.jpg" alt="ilustração partições variáveis" width="80%" height="80%">
+</div>
+  
+<p align="center">Fonte: PUC-Rio</p>
+
 
 ## Swapping
 
@@ -71,6 +88,14 @@ b) Lista encadeada:
 - A lista contém o processo (P), o endereço de início e o endereço final
 - O H denota Hole, a área de memória que não está ocupada. P. ex.: H 5 3 -> existe uma área vaga a partir do endereço 5 por 3 posições.
 
+<br>
+
+<div align="center">
+  <img src="Imagens/bitmap-lista.jpg" alt="demonstração gráfica do bitmap e da lista encadeada" width="80%" height="80%">
+</div>
+  
+<p align="center">Fonte: PUC-Rio</p>
+
 ## Algoritmos de alocação
 
 Há três formas de alocar uma área livre para um processo:
@@ -81,3 +106,17 @@ b) Pior escolha: inversamente à melhor escolha, busca a lista inteira e toma a 
 
 c) Primeira escolha: o processo é alocado no primeiro espaço que couber.
 
+<div align="center">
+  <img src="Imagens/alocacao.jpg" alt="alocação de memória livre" width="80%" height="80%">
+</div>
+
+<p align="center">Fonte: ICMC - USP</p>
+
+## Referências
+
+http://www-di.inf.puc-rio.br/~endler/courses/inf1019/transp/aulas-teoricas/cap-4.pdf<br>
+http://wiki.icmc.usp.br/images/c/c7/Aula10.pdf<br>
+https://www.youtube.com/watch?v=TwlIiA1HhT4<br>
+https://www.youtube.com/watch?v=Q8ZqjEafmNc<br>
+https://www.youtube.com/watch?v=9AK_1gqEfkQ<br>
+MACHADO, Francis B; MAIA, Luiz P. Arquitetura de Sistemas Operacionais. 4. ed. Rio de Janeiro: LTC, 2007. 305 p. ISBN 978-85-216-1548-4.
