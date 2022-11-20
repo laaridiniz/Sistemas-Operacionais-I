@@ -7,7 +7,16 @@ O sistema operacional tem duas funções principais:
 - Ser a interface que facilita a comunicação do usuário com o computador;
 - Ser um administrador de recursos (saber quando deve alocar um determinado recurso para um programa e quando deve retirar um recurso de outro programa).
 
-<p align="justify">Um processo é um programa em execução que possui um processador. Esse processador é compartilhado de maneira que esse processo possa usar de forma otimizada o processador entre os vários processos (programas em execução).<br></p>
+<p align="justify">Um processo é um programa em execução que possui um processador. Esse processador é compartilhado de maneira que esse processo possa usar de forma otimizada o processador entre os vários processos (programas em execução).<br>
+<br>
+Se a RAM for pequena, o gerenciamento de memória será muito mais demandado para evitar que haja gargalos nos processos.<br>
+<br>
+Existem dois tipos de memória principal:<br>
+  <br>
+a) Memória Lógica: manipulada pelos programas, ou seja, sempre que um programa necessitar alocar um espaço de memória, esse espaço será alocado na memória lógica (software);<br>
+  <br>
+b) Memória Física: memória implementada pelos circuitos integrados (hardware), seu tamanho normalmente é menor do que o da memória lógica.<br>
+</p>
 
 
 ## Conceito
@@ -21,7 +30,13 @@ Em um ambiente de multiprogramação, o SO deve proteger as áreas de memória o
 
 ## Etapas 
 
-<p align="justify">O gerenciamento de memória é dividido nas seguintes etapas:<br>
+<p align="justify">Atualmente existem vários layouts/estruturas de memórias, dos quais podemos citar:<br>
+<br>
+a) Monoprogramação: existe um único processo sendo executado no sistema. Ex.: MS-DOS (MicroSoft Disk Operating System = sistema operacional por linha de comando) e Palm OS.<br>
+<br>
+b) Multiprogramação: vários computadores que compartilham a mesma CPU e a mesma memória. Ex.: sistemas de veículos autônomos, Linux e Windows.<br>
+<br>
+O gerenciamento de memória é dividido nas seguintes etapas:<br>
 <br>
 - Partição da memória: divide a memória principal em várias partições diferentes, de maneira que cada uma delas fique alocada para determinada partição. Em cada partição poderá haver mais de um job/tarefa na fila.<br>
 <br>
@@ -35,9 +50,34 @@ Em um ambiente de multiprogramação, o SO deve proteger as áreas de memória o
 
 ## Tipos de partições
 
-<p align="justify">Existem 2 tipos de memórias particionadas:<br>
+<p align="justify">Francis B. Machado divide as alocações em 2 tipos:<br>
 <br>
-a) Partições fixas (alocação estática): são determinadas no momento do boot do sistema.<br>
+1) Alocação Contígua Simples:<br>
+<br>
+Muito comum nos sistemas monoprogramáveis, a alocação contígua simples é definida como um modelo subdividido em duas áreas: uma para o sistema operacional e uma para o programa do usuário. Dessa forma, o programador deve desenvolver suas aplicações preocupado apenas em não ultrapassar o espaço de memória disponível, respeitando a diferença entre o tamanho total da memória principal e a área ocupada pelo sistema operacional.<br></p>
+  
+<div align="center">
+  <img src="Imagens/particoes-fixas.jpg" alt="ilustração partições fixas" width="80%" height="80%">
+</div>
+  
+<p align="center">Fonte: ICMC - USP</p>
+<br>
+
+<p align="justify">Nesse modelo, o usuário tem controle sobre toda a memória principal, podendo ter acesso a qualquer posição de memória, inclusive a área do sistema operacional.Para proteger o sistema desse tipo de acesso, alguns sistemas implementam proteção através de um registrador que limita as áreas do sistema operacional e do usuário, de forma que sempre que um programa fizer referência a um endereço na memória, o sistema precise verificar se o endereço está dentro dos limites permitidos. Caso não esteja, o programa é cancelado e uma mensagem de erro é gerada, indicando que houve uma violação no acesso à memória principal.<br>
+<br>
+Embora seja de fácil implementação e tenha código reduzido, este tipo de alocação não permite a utilização eficiente dos recursos computacionais, pois apenas um usuário pode dispor desses recursos. Em relação à memória principal, caso o programa do usuário não a preencha totalmente, existirá um espaço de memória livre sem utilização.<br>
+<br>
+Obs.: Na alocação contígua simples, todos os programas são limitados ao tamanho da área de memória principal disponível para o usuário. Uma solução encontrada para o problema é dividir o programa em módulos, de forma que seja possível a execução independente de cada módulo, utilizando uma mesma área de memória. Essa técnica é chamada de Overlay.<br>
+  <br>
+A definição das áreas de overlay é função do programador, através de comandos específicos da linguagem de programação utilizada. O tamanho de uma área de overlay é estabelecido a partir do tamanho do maior módulo. A vantagem dessa técnica é permitir ao programador expandir os limites da memória principal. Importante destacar que a utilização desta técnica exige muito cuidado, pois pode trazer implicações tanto na sua manutenção quanto no desempenho das aplicações, devido à possibilidade de transferência excessiva dos módulos entre a memória principal e a secundária.<br>
+<br></p>
+
+<p align="justify">
+2) Alocação Particionada:<br>
+  <br>
+Este tipo de alocação permite que diversos programas estejam na memória principal ao mesmo tempo e que novas formas de gerência da memória sejam implementadas. Esse tipo de alocação pode ser separado em:<br>
+<br>
+a) Alocação particionada estática (Partições fixas): são determinadas no momento do boot do sistema.<br>
 - Tamanho e número de partições são fixos;<br>
 - Tendem a desperdiçar memória;<br>
 - Mais simples.<br>
@@ -51,7 +91,7 @@ a) Partições fixas (alocação estática): são determinadas no momento do boo
 <br>
 
 <p align="justify">
-b) Partições variáveis (alocação dinâmica): ocorrem durante o tempo de execução dos programas.<br>
+b) Alocação particionada dinâmica (Partições variáveis): ocorrem durante o tempo de execução dos programas.<br>
 - Tamanho e número de partições variam;<br>
 - Otimiza a utilização da memória, mas complica a alocação e a liberação;<br>
 - As partições são alocadas dinamicamente.<br>
@@ -74,7 +114,11 @@ b) Partições variáveis (alocação dinâmica): ocorrem durante o tempo de exe
 Swap-in = transferência do disco para a memória principal<br>
 <br>
 Swap-out = transferência da memória principal para o disco<br>
-<br></p>
+<br>
+No swapping o sistema basicamente tira o conteúdo da memória principal e coloca no disco, e vice-versa. Em outras palavras, o swapping é uma técnica que permite que novos processos sejam executados, ainda que não haja espaço livre na memória principal, através da transferência temporária de processos residentes na memória principal para a memória secundária, liberando espaço para novos processos.<br>
+<br>
+Obs: Overlay e memória virtual = são técnicas que permitem a execução de programas maiores do que o espaço disponível na memória física.<br>
+</p>
 
 ## Estruturas de gerenciamento de memória
 
