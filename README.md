@@ -8,3 +8,4 @@ Repositório criado para centralizar os conteúdos e atividades da disciplina Si
 * [Buffering](https://github.com/laaridiniz/Sistemas-Operacionais-I/tree/main/Buffering)
 * [Spooling](https://github.com/laaridiniz/Sistemas-Operacionais-I/tree/main/Spooling)
 * [Kernel](https://github.com/laaridiniz/Sistemas-Operacionais-I/tree/main/Kernel)
+* [Gerenciamento de Memória](https://github.com/laaridiniz/Sistemas-Operacionais-I/tree/main/Gerenciamento%20de%20Mem%C3%B3ria)
