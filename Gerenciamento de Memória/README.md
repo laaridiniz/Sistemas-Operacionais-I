@@ -80,6 +80,7 @@ Este tipo de alocação permite que diversos programas estejam na memória princ
 a) Alocação particionada estática (Partições fixas): são determinadas no momento do boot do sistema.<br>
 - Tamanho e número de partições são fixos;<br>
 - Tendem a desperdiçar memória;<br>
+- As partições podem ser iguais ou não (em relação ao tamanho) e são chamadas de páginas, blocos ou frames;
 - Mais simples.<br>
 <br></p>
 
@@ -94,9 +95,9 @@ a) Alocação particionada estática (Partições fixas): são determinadas no m
 b) Alocação particionada dinâmica (Partições variáveis): ocorrem durante o tempo de execução dos programas.<br>
 - Tamanho e número de partições variam;<br>
 - Otimiza a utilização da memória, mas complica a alocação e a liberação;<br>
-- As partições são alocadas dinamicamente.<br>
-- < fragmentação interna<br>
-- > fragmentação externa<br>
+- As partições são alocadas dinamicamente;<br>
+- Fragmentação interna: é um porção de memória de uma determinada partição que não é utilizada devido aos requisitos reduzidos dos processos, ou seja, ocorre quando <b>o tamanho do processo é menor que a área alocada</b>, p. ex., uma partição com 6Kb aloca um processo de 5Kb, causando desperdicio de 1Kb de memória. Em outras palavras, pode-se dizer que esse tipo de fragmentação ocorre quando um arquivo ou fragmento de arquivo não ocupa completamente o espaço da unidade de alocação destinado a ele, causando desperdício de espaço na memória principal;<br>
+- Fragmentação externa: ocorre quando existe espaço suficiente de memória livre para satisfazer uma requisição, porém, não é continuo e não pode ser utilizado. Isto é, ocorre quando um processo precisa de um espaço, por exemplo 5Kb, porém, esse espaço só existe em duas lacunas, uma de 3kb e outra de 2kb, em lugares separados. Este tipo de fragmentação começa a acontecer quando os programas forem terminando e deixando espaços cada vez menores na memória, não permitindo o ingresso de novos programas.<br>
 <br>
 </p>
 
@@ -155,6 +156,7 @@ c) Primeira escolha: o processo é alocado no primeiro espaço que couber.
 </div>
 
 <p align="center">Fonte: ICMC - USP</p>
+
 
 ## Referências
 
