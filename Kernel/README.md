@@ -22,6 +22,19 @@ c) A partir de linguagem de comandos (particular de casa sistema, com estruturas
  <p align="center">Fonte: Alura, 2022.</p>
 <br>
 
+<p align="justify">As rotinas do sistema são executadas concorrentemente sem uma ordem predefinida, com base em eventos dissociados do tempo (eventos assíncronos), sem que haja um sequenciamento de início, meio e fim. Além disso, muitos desses eventos são relacionados ao hardware e a tarefas internas do próprio sistema operacional.<br>
+<br>
+Rotinas do sistema = compõem o núcleo do sistema e oferecem serviços aos usuários e suas aplicações<br>
+<br>
+System calls = faz o controle de execução de rotinas do SO. Toda vez que uma aplicação desejar chamar uma rotina do SO, o system call é ativado.<br></p>
+
+- Vê se a aplicação tem privilégios necessários para executar a rotina desejada;
+- Se tiver, o SO salva o conteúdo corrente nos registradores, troca o modo de acesso e realiza o desvio para a rotina desejada. Ao término da rotina, o modo é alterado para usuário novamente; e 
+- Se não tiver, o SO impede o desvio para a rotina, sinalizando a programa chamador que a operação não é possível.
+
+Rotinas de sistema + System calls = porta de entrada para o núcleo
+
+
 ## Funções do núcleo
 
 <p align="justify">O primeiro ponto importante a ser destacado quando se fala em funções do núcleo é que as rotinas do sistema são executadas concorrentemente sem uma ordem predefinida, com base em eventos dissociados do tempo (eventos assíncronos), sem que haja um sequenciamento de início, meio e fim. Além disso, muitos desses eventos são relacionados ao hardware e a tarefas internas do próprio sistema operacional.<br>
@@ -69,12 +82,26 @@ Para solucionar esses diversos problemas originados pelo ambiente multiprogramá
 Os processadores normalmente têm dois modos de acesso:<br>
 <br>
 a) Modo usuário (espaço de aplicação = modo no qual as aplicações normalmente são executadas -> não é possível executar instruções privilegiadas): quando um processador trabalha no modo usuário, uma aplicação só pode executar instruções conhecidas como não-privilegiadas, tendo acesso a um número reduzido de instruções;<br>
-<br>
-b) Modo kernel (tem controle total sobre a CPU, pode executar todas as instruções do conjunto de instruções do processador em questão -> o SO é executado neste modo. Antes de o SO passar o controle da CPU para uma aplicação do usuário, o bit de controle de modo é configurado para o modo de usuário): em contrapartida, quando um processador trabalha no modo kernel, a aplicação pode ter acesso ao conjunto total de instruções do processador.<br>
+<br></p>
+
+- não tem acesso direto ao hardware
+- executa instruções não-privilegiadas
+- o software/aplicativo é executado, como navegador, editor de texto, reprodutor de áudio e vídeo utilizam esse espaço
+
+
+<p align="justify">b) Modo kernel (tem controle total sobre a CPU, pode executar todas as instruções do conjunto de instruções do processador em questão -> o SO é executado neste modo. Antes de o SO passar o controle da CPU para uma aplicação do usuário, o bit de controle de modo é configurado para o modo de usuário): em contrapartida, quando um processador trabalha no modo kernel, a aplicação pode ter acesso ao conjunto total de instruções do processador.<br>
 <br>
 O modo de acesso é determinado por um conjunto de bits, localizado no registrador de status do processador, que indica o modo de acesso corrente. Por intermédio desse registrador, o hardware verifica se a instrução pode ou não ser executada.<br>
-<br>
-As instruções privilegiadas não devem ser utilizadas de maneira indiscriminada pelas aplicações, pois isso poderia ocasionar sérios problemas à integridade do sistema.<br>
+<br></p>
+
+- tem acesso direto ao hardware
+- a principal funcionalidade é de executar instruções privilegiadas
+- está protegido de ser acessado por programas de aplicativos ou partes menos importantes do SO
+- é um espaço para o gerenciamento de um computador, como alocação de memória e gerenciamento de processos
+- pode ler e escrever para mídia de armazenamento, por exemplo
+
+
+<p align="justify">As instruções privilegiadas não devem ser utilizadas de maneira indiscriminada pelas aplicações, pois isso poderia ocasionar sérios problemas à integridade do sistema.<br>
 <br>
 IMPORTANTE:<br>
 <br>
@@ -87,6 +114,10 @@ Caso uma aplicação tenha acesso a áreas de memória onde está carregado o SO
 RESUMO:<br>
 <br>
 Os modos de acesso foram criados para limitar a forma como cada usuário acessa as funções do sistema e para proteger o núcleo do sistema operacional, impedindo que um programador mal-intencionado ou erro de programação corrompa o sistema.<br>
+<br>
+O manual do SO precisa especificar como executar as instruções. Além disso, na prática, apenas visualizando as aplicações em funcionamento, não é possível diferenciais quais instruções são privilegiadas ou não, mas é possível identificar esses tipos de instruções analisando o quanto essas instruções vão afetar a integridade e a segurança do sistema.<br>
+<br>
+Cada sistema operacional tem uma lista pré-definida de system calls. Com base na documentação do Linux, por exemplo, é possível identificar que o comando "sys_read" executa instruções não privilegiadas, pelo fato de ser utilizado apenas para leitura de determinado arquivo. Por outro lado, é possível identificar que o comando "sys_write" executa instruções privilegiadas, uma vez que é utilizado escrever/gravar algum dado em determinado arquivo, e a depender do tipo de escrita a integridade do sistema pode ser comprometida.<br>
 </p>
 
 ## Rotinas do SO e Systems Calls
@@ -121,6 +152,38 @@ Uma aplicação sempre deve executar com o processador em modo usuário. Caso um
 
 <p align="justify">Os mecanismos de System Call e de proteção por hardware garantem a segurança e a integridade do sistema, impedindo que as aplicações executem instruções privilegiadas sem a autorização e a supervisão do SO.</p>
 
+
+## Arquiteturas do núcleo
+
+<p align="justify">Forma como o código do sistema é organizado e o inter-relacionamento entre os seus componentes pode variar conforme a concepção do projeto. Deve ser levada em consideração ao projetar um SO para o atendimento de diversos requisitos como portabilidade, confiabilidade, manutenção etc.<br>
+<br>
+a) Monolítica → pode ser comparada a uma aplicação formada por vários módulos que são compilados separadamente e depois linkados, formando um grande e único programa executável, onde os módulos podem interagir livremente.<br>
+<br>
+Nesse modelo, os serviços de usuário e kernel são implementados no mesmo espaço de memória (não há memória diferente usada para serviços de usuários e serviços de kernel). A execução do processo é mais rápida, pois não usa espaço separado do usuário e do kernel. Exemplo de sistema operacional que usa núcleos monolíticos é o Linux;<br>
+<br>
+b) Camadas: sistema composto por níveis sobrepostos. Cada camada oferece um conjunto de funções que podem ser utilizadas apenas pelas camadas superiores. P. ex.: usuário -> supervisor -> executivo -> Kernel<br>
+<br>
+Vantagem: isolar as funções do SO, facilitando a manutenção e a depuração + criar hierarquia de níveis de modo de acesso, protegendo camadas mais internas.<br>
+<br>
+Desvantagem: Desempenho, já que cada nova camada implica uma mudança no modo de acesso.<br>
+<br>
+Atualmente a maioria dos sistemas comerciais utiliza o modelo de duas camadas: modo usuário (não-privilegiado) e modo kernel (privilegiado). Ex.: maioria das versões Unix e Windows.<br>
+<br>
+c) Máquina virtual: sistema formado por níveis, sendo o hardware o nível mais baixo. Acima dele temos o SO (suporte para aplicações) e, em nível intermediário, há a gerência de máquinas virtuais, um nível que cria diversas MV independentes, e cada uma delas oferece uma cópia virtual do hardware (incluindo modo de acesso, interrupções, dispositivos de E/S etc.)<br>
+<br>
+Vantagem: permite a convivência de vários SOs diferentes no mesmo computador e cria o isolamento total entre cada MV, oferecendo segurança pra cada uma delas.<br>
+<br>
+Desvantagem: essa arquitetura é muito complexa porque precisa compartilhar e gerenciar recursos do hardware entre as diversas MVs.<br>
+<br>
+d) Microkernel → Os serviços de usuário e kernel são implementados em dois espaços diferentes. Inclui apenas os serviços e dispositivos essenciais para que o sistema funcione. O tamanho do kernel é menor, o que reduz o tamanho do sistema operacional.<br>
+<br>
+Vantagem: permite isolar as funções do SO por diversos processos servidores pequenos e dedicados a serviços específicos, tornando o núcleo menor e mais fácil de depurar, aumentando a confiabilidade. Mais fácil manutenção, flexível e maior portabilidade.<br>
+<br>
+e) Kernel híbrido → É a combinação de monolítico e microkernel. Permite executar alguns serviços para reduzir o desempenho em comparação com um microkernel tradicional e com a velocidade um kernel monolítico. Exemplo: Windows NT.<br>
+<br>
+f) Nanokernel → Menor tipo de kernel. São usados principalmente em sistemas ou dispositivos com recursos limitados;<br>
+<br>
+g) Exokernel → Possui proteção e gerenciamento de recursos separados. São variações do microkernel que incluem recursos adicionais para dispositivos móveis, como gerenciamento de energia e suporte para vários processadores.<br></p>
 
 ## Referências
 
